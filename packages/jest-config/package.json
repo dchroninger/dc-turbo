@@ -1,0 +1,15 @@
+{
+  "name": "jest-config",
+  "version": "0.0.0",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "jest": "^29.4.1",
+    "ts-jest": "^29.0.5",
+    "jest-environment-jsdom": "^29.4.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@jest/globals": "^29.4.1"
+  }
+}
