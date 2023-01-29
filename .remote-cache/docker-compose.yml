@@ -1,0 +1,9 @@
+version: "4.2"
+
+services:
+  turbo-cache:
+    image: fox1t/turborepo-remote-cache:latest
+    ports:
+      - 3333:3333
+    env_file:
+      - .env
