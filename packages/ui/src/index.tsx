@@ -1,2 +1,3 @@
-import * as React from "react";
-export * from "./components/Button/Button";
+export { Button } from "./components/Button/Button";
+export { Typography, type TypographyProps} from "./components/Typography";
+export { Link } from "./components/Link/Link";

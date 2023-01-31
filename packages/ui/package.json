@@ -12,6 +12,7 @@
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react && tailwindcss -i ./src/styles.css -o ./dist/styles.css",
     "dev": "concurrently \"tsup src/index.tsx --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",
     "test": "jest --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
     "clean": "rm -rf dist",
     "storybook": "concurrently \"start-storybook -p 6006\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",
     "build-storybook": "build-storybook"

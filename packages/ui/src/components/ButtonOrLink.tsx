@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import React, { ComponentProps} from 'react';
 import Link from 'next/link';
 
 type ButtonOrLinkProps = ComponentProps<'button'> & ComponentProps<'a'>;
@@ -15,14 +15,10 @@ export function ButtonOrLink({ href, label, ...props }: Props) {
   const isLink = typeof href !== 'undefined';
   const ButtonOrLink = isLink ? 'a' : 'button';
 
-  let content = <ButtonOrLink {...props} />;
+  const children = label ?? props.children;
 
   if (isLink) {
-    return <Link href={href}>{content}</Link>;
+    return <Link href={href}>{children}</Link>;
   }
-  if(label) {
-    return <ButtonOrLink {...props}>{label}</ButtonOrLink>;
-  }
-
-  return content;
+  return <ButtonOrLink {...props}>{children}</ButtonOrLink>;
 }

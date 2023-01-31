@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Button } from "ui";
+import {Typography, Button, Link} from "ui";
 
 export default function Home() {
   return (
@@ -10,7 +10,8 @@ export default function Home() {
       </Head>
 
       <main className="mx-auto w-auto px-4 pt-16 pb-8 sm:pt-24 lg:px-8">
-          <Button intent={"primary"}>Primary</Button>
+        {/*<Typography intent={"primary"}>Test Text</Typography>*/}
+        <Link intent={"primary"}>Primary</Link>
       </main>
     </div>
   );

@@ -9,15 +9,25 @@ describe('Button', () => {
   beforeEach(() => {
     props = {
       intent: 'primary',
-      label: 'Placeholder',
       variant: 'outlined'
     };
   });
 
-  test('should render', () => {
-    const {getByText} = render(<Button {...props} />);
-    const label = getByText(props.label!);
-    expect(label).toBeVisible();
+  test('should render with Label', () => {
+    const label = "With Label";
+    const {getByText, findByLabelText} = render(<Button label={label}{...props} />);
+    const button = getByText(label);
+    expect(button).toBeVisible();
+    expect(findByLabelText(label)).toBeTruthy();
+    expect(button).toHaveTextContent(label);
+  });
+
+  test('should render with children', () => {
+    const children = "With Children";
+    const {getByText} = render(<Button {...props}>{children}</Button>);
+    const button = getByText(children);
+    expect(button).toBeVisible();
+    expect(button).toHaveTextContent(children);
   });
 
 });
